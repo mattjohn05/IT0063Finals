@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container" id="container">
+        <!-- Sign Up Form -->
+    <div class="form-container sign-up-container">
+        <form id="signupForm">
+            <h1>Create an Account</h1>
+
+            <!-- Name Input with Icon -->
+            <div class="input-container">
+                <span class="icon">
+                    <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Layer_3" data-name="Layer 3">
+                            <path d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"></path>
+                        </g>
+                    </svg>
+                </span>
+                <input type="text" id="signupName" placeholder="Name" required />
+            </div>
+
+            <!-- Email Input with Icon -->
+            <div class="input-container">
+                <span class="icon">
+                    <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 4v24h28V4Zm26 2-12 9L4 6ZM4 26V8l12 9 12-9v18Z"></path>
+                    </svg>
+                </span>
+                <input type="email" id="signupEmail" placeholder="Email" required />
+            </div>
+
+            <!-- Password Input with Icon -->
+            <div class="input-container">
+                <span class="icon">
+                    <svg height="20" viewBox="-64 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"></path>
+                        <path d="M304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969-16-16-16s-16 7.167969-16 16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"></path>
+                    </svg>
+                </span>
+                <input type="password" id="signupPassword" placeholder="Password" required />
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+
+       <!-- Sign In Form -->
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <h1>Sign in</h1>
+
+                <!-- Email Input with Icon -->
+                <div class="input-container">
+                    <span class="icon">
+                        <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Layer_3" data-name="Layer 3">
+                            <path d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"></path>
+                        </g>
+                    </svg>
+                    </span>
+                    <input type="email" id="loginEmail" placeholder="Email" required />
+                </div>
+
+                <!-- Password Input with Icon -->
+                <div class="input-container">
+                    <span class="icon">
+                        <svg height="20" viewBox="-64 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"></path>
+                        <path d="M304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"></path>
+                    </svg>
+                    </span>
+                    <input type="password" id="loginPassword" placeholder="Password" required />
+                </div>
+
+                <!-- Remember Me and Forgot Password -->
+                <div class="remember-forgot">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe"> <span>Remember Me</span>
+                    </label>
+                    <a href="forget_password.html" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+
+
+        <!-- Overlay for transition -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us, please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your details and start your journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("container");
+
+        // Switch Panels
+        document.getElementById("signUp").onclick = () => container.classList.add("right-panel-active");
+        document.getElementById("signIn").onclick = () => container.classList.remove("right-panel-active");
+
+        // Sign Up (Store Credentials)
+        document.getElementById("signupForm").onsubmit = (e) => {
+            e.preventDefault();
+            const user = {
+                name: document.getElementById("signupName").value,
+                email: document.getElementById("signupEmail").value,
+                password: document.getElementById("signupPassword").value
+            };
+            if (user.name && user.email && user.password) {
+                localStorage.setItem("user", JSON.stringify(user));
+                alert("Account Created! You can now Sign In.");
+                container.classList.remove("right-panel-active");
+                e.target.reset();
+            } else alert("Please fill out all fields.");
+        };
+
+        // Sign In (Check Credentials)
+        document.getElementById("loginForm").onsubmit = (e) => {
+            e.preventDefault();
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+            const rememberMe = document.getElementById("rememberMe").checked;
+            const storedUser = JSON.parse(localStorage.getItem("user"));
+
+            if (storedUser && email === storedUser.email && password === storedUser.password) {
+                alert("Login Successful!");
+                rememberMe ? localStorage.setItem("rememberedUser", email) : localStorage.removeItem("rememberedUser");
+                window.location.href = "index.html"; // Redirect
+            } else alert("Invalid email or password.");
+        };
+
+        // Auto-fill Remembered Email
+        const rememberedUser = localStorage.getItem("rememberedUser");
+        if (rememberedUser) {
+            document.getElementById("loginEmail").value = rememberedUser;
+            document.getElementById("rememberMe").checked = true;
+        }
+    });
+
+    </script>
+
+</body>
+</html>
