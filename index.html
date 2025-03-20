@@ -1,388 +1,159 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CON.SOUL</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>The Bag Atelier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Playfair Display', serif; color: #4a4a4a; background-color: #fdfdfd; }
+        .navbar { background-color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .navbar-brand { font-weight: bold; font-size: 26px; font-family: 'Cormorant Garamond', serif; }
+        .nav-link { color: #4a4a4a; transition: color 0.3s; }
+        .nav-link:hover { color: #8B5E34; }
+        .cart-icon img { width: 30px; }
+        .cart-icon span { background: #8B5E34; color: #fff; border-radius: 50%; padding: 2px 6px; font-size: 12px; position: absolute; top: 8px; right: 8px; }
+        .hero { background: url('https://www.verlein.com/cdn/shop/collections/FW2021_-_Campaign_Photo_-_Web_-_Black_Thalia_01_3024x.jpg?v=1634224311') no-repeat center center/cover; height: 90vh; color: #fff; text-align: center; display: flex; justify-content: center; align-items: center; }
+        .hero h1 { font-size: 4rem; font-family: 'Cormorant Garamond', serif; }
+        .about-hero { background: url('Assets/about-hero.jpg') no-repeat center center/cover; height: 70vh; display: flex; justify-content: center; align-items: center; color: white; text-align: center; }
+        .about-hero h2 { font-size: 3rem; font-family: 'Cormorant Garamond', serif; }
+        .btn-primary { background-color: #8B5E34; border: none; font-family: 'Playfair Display', serif; }
+        .btn-primary:hover { background-color: #5A3C1A; }
+        .about-section { background: #fdfdfd; padding: 60px 0; color: #4a4a4a; text-align: center; }
+        .about-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 20px; color: #8B5E34; }
+        .about-section p { font-size: 1.2rem; line-height: 1.8; max-width: 800px; margin: 0 auto; }
+        .product-card { position: relative; overflow: hidden; border: none; cursor: pointer; transition: transform 0.3s; justify-content: space-between; height: 100%; }
+        .product-card:hover { transform: scale(1.05); }
+        .product-card img { width: 100%; height: auto; }
+        .product-info { padding: 15px; text-align: center; }
+        .add-to-cart { width: 100%; background: #8B5E34; color: white; border: none; padding: 10px; cursor: pointer; transition: background 0.3s; }
+        .add-to-cart:hover { background: #5A3C1A; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-<!-- NAV BAR -->
-<nav class="navbar">
-    <div class="container-fluid">
-      <a href="cart.html" class="cart-icon">
-        <img src="https://cdn-icons-png.flaticon.com/128/2956/2956820.png" alt="cart" width="50" height="44" align-text-top>
-      </a>
-      <a class="navbar-brand mx-auto" href="#hero">
-        <img src="Assets/black logo.png" alt="logo" width="50" height="44" align-text-top>
-      </a>
-      <button class="navbar-toggler" id="nav-toggler">
-        <img src="https://www.svgrepo.com/show/506800/burger-menu.svg" alt="burger-menu width="50" height="44" align-text-top>
-        
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">The Bag Atelier</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="Login.html">LOGIN</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about-0">ABOUT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#product-0">PRODUCTS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#icon-section">FEATURES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#team-0">TEAM</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact-0">CONTACT</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="Login.html">LOGIN</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about-0">ABOUT</a></li>
+                <li class="nav-item"><a class="nav-link" href="#product-0">COLLECTION</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact-0">CONTACT</a></li>
+                <li class="nav-item">
+                    <a href="cart.html" class="nav-link cart-icon position-relative">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2956/2956820.png" alt="Cart">
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <section class="hero">
+        <div>
+            <h1>Elevate Your Style</h1>
+            <p>Timeless luxury bags for every occasion</p>
+            <a href="#product-0" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="about-0" class="about-section">
+      <div class="container">
+          <h2>About The Bag Atelier</h2>
+          <p>The Bag Atelier is a luxury brand dedicated to crafting elegant, timeless bags for the modern woman. Our collections blend sophistication with functionality, offering the perfect companion for every occasion. With meticulous attention to detail and premium materials, each piece is a symbol of refined style and grace.</p>
       </div>
-      </div>
-    </nav>  
-  </div>
+  </section>
 
-<!-- HERO SECTION -->
-  <section id="hero-0" class="hero" >
-    <div class="container">
-      <div class="row">
-                  
-                </div>
-        </section>
-    <main>
-
-<!-- ABOUT US -->
-        <section id="about-0" class="about">
-            <section class="about-container">
-                <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_ABA-02_.jpg" alt="About" width="320" height="424" style="float: left; margin: 70px;">
-                <div class="about-text">
-                    <h1>About Us</h1>
-                    <p>Welcome to Con.Soul, where vintage vibes meet modern flair. Inspired by the unforgettable Y2K era, we specialize in bringing you the coolest glasses and accessories that are a blast from the past with a twist of today. At Con.soul, we believe that style is a statement. Our collection is meticulously curated to capture the essence of the early 2000s, a time when bold colors, futuristic designs, and a dash of digital charm ruled the fashion scene. Whether you're looking to relive the glory days of the millennium or add a touch of retro chic to your modern wardrobe, we've got you covered. Our glasses range from sleek, rimless frames to funky, tinted lenses, each piece designed to turn heads and make you stand out. Our accessories, from chunky rings to holographic bags, are perfect for those who love to mix nostalgia with contemporary cool. Join the Con.soul community and embrace the spirit of Y2K. Let's make the old new again and celebrate a style that’s as timeless as it is trendsetting. Welcome to the future of retro fashion. Welcome to Con.soul.
-                    </p>
-                </div>
-            </section>
-        </section>
-    <br><br>
-    
-
-
-<!-- CAROUSEL -->
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-      <div class="carousel-item active">
-          <img class="d-block w-100" src="Assets/1.png" alt="First slide">
-      </div>
-      <div class="carousel-item">
-          <img class="d-block w-100" src="Assets/3.png" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-          <img class="d-block w-100" src="Assets/2.png" alt="Third slide">
-      </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-  </a>
-</div>
-<br><br>
-
-<!-- PRODUCTS -->
-<h1 style="text-align: center; padding-bottom: 25px">PRODUCTS</h1>
-
-<section id="product-0" class="product">
-    <div class="card card-hover h-100">
-        <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_DADA-01-2_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">DADA 01</h3>
-            <p class="card-price">₱17,000.00</p>
-            <button class="button add-to-cart" data-product="DADA 01" data-price="17000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_FEAR_X_G13_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">FEAR X G13</h3>
-            <p class="card-price">₱18,000.00</p>
-            <button class="button add-to-cart" data-product="FEAR X G13" data-price="18000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_EX_S01_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">EX S01</h3>
-            <p class="card-price">₱21,000.00</p>
-            <button class="button add-to-cart" data-product="EX S01" data-price="21000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_ATEMPO_01_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">ATEMPO 01 2</h3>
-            <p class="card-price">₱17,000.00</p>
-            <button class="button add-to-cart" data-product="ATEMPO 01 2" data-price="17000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/b/a/barrette-02_2_1_1.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">BARETTE 02</h3>
-            <p class="card-price">₱22,000.00</p>
-            <button class="button add-to-cart" data-product="BARETTE 02" data-price="22000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/d/o/donutbun-bl5_2_1_1.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">DONUTBUN Bl5</h3>
-            <p class="card-price">₱17,000.00</p>
-            <button class="button add-to-cart" data-product="DONUTBUN Bl5" data-price="17000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_TOTE_01_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">TOTE 01</h3>
-            <p class="card-price">₱14,000.00</p>
-            <button class="button add-to-cart" data-product="TOTE 01" data-price="14000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_MONTA_01_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">MONTA 01</h3>
-            <p class="card-price">₱12,000.00</p>
-            <button class="button add-to-cart" data-product="MONTA 01" data-price="12000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_AVON_W2_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">AVON W2</h3>
-            <p class="card-price">₱16,000.00</p>
-            <button class="button add-to-cart" data-product="AVON W2" data-price="16000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_MOLTA-BRC11-2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">MOLTA BRC11</h3>
-            <p class="card-price">₱13,000.00</p>
-            <button class="button add-to-cart" data-product="MOLTA BRC11" data-price="13000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_VOID-01-2_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">VOID 01</h3>
-            <p class="card-price">₱19,000.00</p>
-            <button class="button add-to-cart" data-product="VOID 01" data-price="19000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
-    <div class="card card-hover">
-      <img src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_TTA_01_2.jpg" alt="Sunglasses">
-        <div class="card-content">
-            <h3 class="card-title">TTA 01</h3>
-            <p class="card-price">₱23,000.00</p>
-            <button class="button add-to-cart" data-product="TTA 01" data-price="23000">ADD TO CART</button>
-            <i class="fa fa-heart" id="heart"></i>
-        </div>
-    </div>
+  <section class="about-hero">
+    <h2>Timeless Craftsmanship & Modern Elegance</h2>
 </section>
-<br><br>
-<br><br>
-<br><br>
 
-
-<!-- ICON SECTION --> 
-<section class="icon-section" id="icon-section">
-    <div class="container">
-        <h2 class="mb-5"> Our Features</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="https://www.svgrepo.com/show/9571/glasses.svg" alt="Eyewear" class="feature-icon">
-                <h2>Custom Design</h2>
-                <p>At Con.soul, we offer bespoke eyewear design services. Whether you’re looking to replicate a favorite vintage look or create a unique piece that reflects your personal style, our skilled designers will work with you to craft the perfect pair of glasses.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://www.svgrepo.com/show/438172/communication-bubble-chat-comments-conversation-message-icon.svg" alt="Consultation" class="feature-icon">
-                <h2>Style Consultation</h2>
-                <p>Not sure which accessories best suit your look? Our style consultation service is here to help. Our fashion experts will guide you through our collection, providing personalized advice to ensure you find the perfect pieces to complement your style and enhance your wardrobe.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://www.svgrepo.com/show/390887/cellphone.svg" alt="feature-icon" class="feature-icon">
-                <h2>Discover Favorites</h2>
-                <p>Experience the convenience of shopping from home with our innovative virtual try-on service. Using advanced technology, you can see how our glasses and accessories will look on you in real-time. Try on different styles, colors, and shapes to find the perfect fit without leaving your couch.</p>
-                </div> 
+    <section id="product-0" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Collection</h2>
+            <div class="row g-4" id="products-container">
+                <!-- Products will be injected here -->
             </div>
         </div>
     </section>
-    <section>
-      
-     
 
-
-<!-- MEET THE TEAM -->
-<section id="team-0" class="team">
-  <div class="team-section">
-  
-      <h1>Meet The Team</h1>
-      <div class="team-container">
-          <div class="team-member">
-              <img src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t1.15752-9/449457830_842028231213371_4865251367201091236_n.png?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFY6oAOdn8m2K80ti_d7GT5gIla0zdJpjiAiVrTN0mmOOFHa9RZ-Hx8fPgYcYHXlrLle31Dy9pefzYoNl4r7nH2&_nc_ohc=UvblSO5X_MoQ7kNvgHA19yw&_nc_ht=scontent.fmnl25-5.fna&oh=03_Q7cD1QH9TDMwpSt2wVNjpWdeN5hgc3gAbtk2iHVIGvjhKOvSUA&oe=66B04210" alt="Jinya">
-              <h2>Jinya Gutierrez</h2>
-              <p>Web Developer</p>
-              <br>
-              <div class="social-icons">
-                  <a href="https://www.facebook.com/jinya.gutz.3"><img src="https://www.svgrepo.com/show/473600/facebook.svg" alt="Facebook"></a>
-                  <a href="https://www.instagram.com/jinyagutierrez?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="https://www.svgrepo.com/show/494277/instagram-round.svg" alt="Instagram"></a>
+    <section id="contact-0" class="contact-form">
+      <div class="container">
+          <h2>Contact Us</h2>
+          <form class="mt-4">
+              <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Your Name" required>
               </div>
-          </div>
-          <div class="team-member">
-              <img src="https://scontent.fmnl25-2.fna.fbcdn.net/v/t1.15752-9/449198802_362049099970693_2333560570922758080_n.png?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGiEbgCFu8VqKkntpbOZ50j1s4bMdGLHk7Wzhsx0YseTu3uCaM7txCkPahYzUcDjpKgx9bqx76bfnFEjg0owwYf&_nc_ohc=UCC79VEr_OMQ7kNvgFhKOf3&_nc_ht=scontent.fmnl25-2.fna&oh=03_Q7cD1QGI0phi4e2bdc4Ml7HSi4V-Udq4Pmhw9_EC5IQVdXnWBw&oe=66B04371" alt="Grace">
-              <h2>Grace Patricio</h2>
-              <p>Web Developer</p>
-              <br>
-             <div class="social-icons">
-                  <a href="https://www.facebook.com/patriciograce/"><img src="https://www.svgrepo.com/show/473600/facebook.svg" alt="Facebook"></a>
-                  <a href="https://www.instagram.com/grcpatricio/"><img src="https://www.svgrepo.com/show/494277/instagram-round.svg" alt="Instagram"></a>
+              <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Your Email" required>
               </div>
-        </div>
-          <div class="team-member">
-              <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t1.15752-9/449289462_1197352044946634_3230766982629189924_n.png?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHBe-7LyzpN3z1my_i3sAYkxACfx4oBTuzEAJ_HigFO7PBLaoM6dUs4yLR1KwnGnva98YhLWixTr92iqP2ZkWD0&_nc_ohc=D6AoDEvj16gQ7kNvgEyROHq&_nc_ht=scontent.fmnl25-4.fna&oh=03_Q7cD1QFAmRYoYRBHvZT2VWTaSIACf0ztG5zzeGJquqOTdWwUvw&oe=66B0372A" alt="Jianna">
-              <h2>Jianna Ramos</h2>
-              <p>Web Developer</p>
-              <br>
-              <div class="social-icons">
-                  <a href="https://www.facebook.com/ramosjianna"><img src="https://www.svgrepo.com/show/473600/facebook.svg" alt="Facebook"></a>
-                  <a href="https://www.instagram.com/jiannaramos_/"><img src="https://www.svgrepo.com/show/494277/instagram-round.svg" alt="Instagram"></a>
+              <div class="mb-3">
+                  <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
               </div>
-          </div>
-          <div class="team-member">
-              <img src="https://scontent.fmnl25-2.fna.fbcdn.net/v/t39.30808-6/418596635_1482555085808327_1522990538685795390_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHuDN5Nd5ZDxvzG5sJYeGsco8JS9gQHLaujwlL2BActq3WmdKvyzKjR-lBMfOu1mwFvEfDegTYT31_6RLNikL04&_nc_ohc=a-i5_JFkGicQ7kNvgGftd7S&_nc_ht=scontent.fmnl25-2.fna&oh=00_AYBcLNpNUw9DMAJRX1JBAAuyRgFAH0ZtI8Ooj_x8meumgQ&oe=668EB2FE" alt="Casey">
-              <h2>Casey Yncierto</h2>
-              <p>Web Developer</p>
-              <br>
-              <div class="social-icons">
-                  <a href="https://www.facebook.com/caryncrt"><img src="https://www.svgrepo.com/show/473600/facebook.svg" alt="Facebook"></a>
-                  <a href="https://www.instagram.com/caryncrt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="https://www.svgrepo.com/show/494277/instagram-round.svg" alt="Instagram"></a>
-          </div>
-          </div>
-          </div>
-          </div>
-      </section>
-
-<!-- FORM -->
-<section id="contact-0" class="contact">
-  <div id="container">
-    <h1 style="text-align: center; padding-bottom: 25px"> CONTACT FORM </h1>
-
-    <div class="row">
-      <div class="col-md-6">
-        <form class="contact-form">
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Your Name"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              class="form-control"
-              placeholder="Phone No."
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-control"
-              placeholder="Your Email ID"
-            />
-          </div>
-          <div class="form-group">
-            <textarea
-              class="form-control"
-              rows="4"
-              placeholder="Message"
-            ></textarea>
-          </div>
-          <button type="submit" class="button-2" id="button-2"> SUBMIT
-          </button>
-        </form>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
       </div>
-      <div class="col-md-6 contact-info">
-        <div class="follow">
-          <b>Address:</b><i class="fa fa-map-marker"></i> Alabang
-    
-        </div>
-        <div class="follow">
-          <b>Phone:</b><i class="fa fa-phone"></i>+123 4567 890
-        </div>
-        <div class="follow">
-          <b>Email:</b><i class="fa fa-envelope-o"></i> Con.Soul@website.com
-        </div>
-        <div class="follow">
-          <label><b>Get Social:</b></label>
-          <a href="https://www.facebook.com/"><i class="fa -facebook"> </i></a>
-          <a href="https://www.youtube.com/"><i class="fa fa-youtube-play"> </i></a>
-          <a href="https://x.com/"><i class="fa fa-twitter"> </i></a>
-          <a href="https://support.google.com/answer/2451065?hl=en"><i class="fa fa-google-plus"> </i></a>
-        </div>  
+  </section>
+
+  <footer class="footer text-center py-3">
+      <div class="container">
+          <p>The Bag Atelier © 2025 | Follow us on <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
       </div>
-    </div>
-  </div>
-</section>
-<!--footer-->
+  </footer>
 
-<section id="footer">
-  <div class="container text-center">
-  </div>
-</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const products = [
+                { img: 'Assets/bag1.jpg', name: 'Chic Tote', desc: 'Spacious and elegant everyday bag.', price: '5,000' },
+                { img: 'Assets/bag2.jpg', name: 'Luxury Satchel', desc: 'Perfect for formal occasions.', price: '6,500' },
+                { img: 'Assets/bag3.jpg', name: 'Vintage Clutch', desc: 'Classic design with modern flair.', price: '10,000' },
+                { img: 'Assets/bag4.jpg', name: 'Crossbody Bag', desc: 'Stylish and practical.', price: '8,500' },
+                { img: 'Assets/bag5.jpg', name: 'Leather Backpack', desc: 'Perfect for travel.', price: '4,500' },
+                { img: 'Assets/bag6.jpg', name: 'Mini Shoulder Bag', desc: 'Compact and fashionable.', price: '8,000' },
+                { img: 'Assets/bag7.jpg', name: 'Elegant Hobo', desc: 'Casual yet stylish.', price: '7,000' },
+                { img: 'Assets/bag8.jpg', name: 'Formal Handbag', desc: 'Ideal for business attire.', price: '6,500' },
+                { img: 'Assets/bag9.jpg', name: 'Slouchy Tote', desc: 'Relaxed yet chic.', price: '$4,500' },
+                { img: 'Assets/bag10.jpg', name: 'Quilted Purse', desc: 'Trendy and timeless.', price: '6,000' },
+                { img: 'Assets/bag11.jpg', name: 'Designer Clutch', desc: 'Perfect for evening wear.', price: '9,000' },
+                { img: 'Assets/bag12.jpg', name: 'Casual Sling Bag', desc: 'Effortlessly stylish.', price: '9,500' }
+            ];
 
-<!--footer end-->
-<script src="js/smooth-scroll.js"></script>
+            const container = document.getElementById('products-container');
 
-<script>
-  var scroll = new SmoothScroll('a[href*="#"]');
+        products.forEach(product => {
+            const productCard = `
+                <div class="col-md-4">
+                    <div class="card product-card" data-product="${product.name}" data-price="${product.price}">
+                        <img src="${product.img}" alt="${product.name}">
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <p>Php ${product.price}</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>`;
+            container.innerHTML += productCard;
+        });
+
+        // Cart Functionality
+        const cartCount = document.getElementById('cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = ++count;
+                alert('Item added to cart!');
+            });
+        });
+    });
 </script>
-    </main>
-
-
-    <footer>
-        <p> 2024 CON.SOUL | All rights reserved.</p>
-    </footer>
-
-  <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="main.js"></script>
-  <script src="cart.js"></script>
-  <script src="favourites.js"></script>
-
 </body>
 </html>
