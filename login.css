@@ -211,6 +211,7 @@ button.ghost {
 }
 
 /* Overlay */
+/* Overlay */
 .overlay-container {
     position: absolute;
     top: 0;
@@ -223,7 +224,7 @@ button.ghost {
 }
 
 .overlay {
-    background: #5A3C1A;
+    background: url('overlaypic.jpg') center/cover no-repeat;
     height: 100%;
     width: 200%;
     position: relative;
@@ -243,6 +244,7 @@ button.ghost {
     text-align: center;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a slight dark overlay for text readability */
 }
 
 .overlay-left {
