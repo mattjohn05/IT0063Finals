@@ -2,23 +2,24 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
   </head>
     <style>
       body {
         text-align: center;
         padding: 40px 0;
-        background: #EBF0F5;
+        background: #A4907f;
       }
         h1 {
           color: #182B2F;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-family: 'Playfair Display', serif;
           font-weight: 900;
           font-size: 40px;
           margin-bottom: 10px;
         }
         p {
           color: #0b0c0c;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-family: 'Playfair Display', serif;
           font-size:20px;
           margin: 0;
         }
@@ -36,15 +37,64 @@
         display: inline-block;
         margin: 0 auto;
       }
+      .btn-primary {
+      background-color: #8B5E34;
+      border: none;
+      font-family: 'Playfair Display', serif;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .btn-primary:hover {
+      background-color: #5A3C1A;
+    }
     </style>
     <body>
       <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; margin:0 auto;">
-        <img src="Assets/Success-01.png" alt="Success-01 width="205" height="205" align-text-top>
+        <img src="Assets/Success-02.png" alt="Success-01 width="205" height="205" align-text-top>
 
       </div>
         <h1>Success!</h1> 
         <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+
+        <button class="btn-primary" onclick="goHome()">Back to Home</button>
       </div>
+
+      <script>
+        function goHome() {
+          window.location.href = "index.html";
+        }
+
+        function shootConfetti() {
+        const duration = 2 * 1000; // Confetti lasts for 2 seconds
+        const animationEnd = Date.now() + duration;
+        const colors = ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#ff99ac'];
+
+        function frame() {
+          const timeLeft = animationEnd - Date.now();
+          if (timeLeft <= 0) return;
+
+          confetti({
+            particleCount: 5,
+            spread: 70,
+            startVelocity: 30,
+            colors: colors,
+            origin: { x: Math.random(), y: Math.random() - 0.2 } 
+          });
+
+          requestAnimationFrame(frame);
+        }
+
+        frame();
+      }
+      window.onload = function() {
+        shootConfetti();
+      };
+      </script>
+
     </body>
 </html>
