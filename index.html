@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Bag Atelier</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link rel="icon" href="Assets/logo.png" type="image/png">
     <style>
         /* General Styles */
         body {
@@ -15,15 +15,67 @@
         }
 
         /* Navbar */
+         /* General Styles */
+         body {
+            font-family: 'Playfair Display', serif;
+            color: #4a4a4a;
+            background-color: #fdfdfd;
+        }
+
+        /* Navbar - Sticky with Scroll Behavior */
         .navbar {
             background-color: #fff;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: top 0.3s;
+            z-index: 999;
+            position: fixed;
+            width: 100%;
+            top: 0;
         }
+
+        .navbar.hidden {
+            top: -80px;  
+        }
+
         .navbar-brand {
             font-weight: bold;
             font-size: 26px;
             font-family: 'Cormorant Garamond', serif;
         }
+
+        .nav-link {
+            color: #4a4a4a;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #8B5E34;
+        } /* General Styles */
+        body {
+            font-family: 'Playfair Display', serif;
+            color: #4a4a4a;
+            background-color: #fdfdfd;
+        }
+
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: top 0.3s;
+            z-index: 999;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        .navbar.hidden {
+            top: -80px;  
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 26px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
         .nav-link {
             color: #4a4a4a;
             transition: color 0.3s;
@@ -147,118 +199,267 @@
             height: 90vh;
         }
 
-        /* Footer */
-        .footer {
-            background: #311e14;
-            color: #fff;
-            padding: 40px 0;
-            font-family: 'Playfair Display', serif;
-        }
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        .footer-section {
-            flex: 1;
-            min-width: 280px;
+      /* Boutique Section */
+        .boutique-section {
+            background: #fdfdfd;
+            color: #4a4a4a;
+            padding: 80px 0;
             text-align: center;
         }
-        .footer-section h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
+
+        .boutique-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: #8B5E34;
+            margin-bottom: 20px;
         }
-        .footer-section p, .footer-section a {
-            font-size: 16px;
+
+        .boutique-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .boutique-section .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .boutique-section .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .boutique-section .card h4 {
+            font-size: 1.5rem;
+            color: #311e14;
+        }
+
+        .boutique-section .card p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .boutique-section .btn {
+            background: #8B5E34;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .boutique-section .btn:hover {
+            background: #5A3C1A;
+        }
+        
+        /* Footer Section */
+        .footer {
+            background-color: #2D1B12;
+            color: #fff;
+            padding: 50px 0;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+        }
+
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;  
+            gap: 40px;
+        }
+
+
+        .footer-column h4 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: #c9a375;
+        }
+
+
+        .footer-column p, 
+        .footer-column a, 
+        .footer-column form {
+            margin: 0;
+            padding-top: 5px; 
+        }
+
+        .footer p, 
+        .footer a {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .footer a {
             color: #fff;
             text-decoration: none;
             transition: color 0.3s;
         }
-        .footer-section a:hover {
-            color: #d1a374;
+
+        .footer a:hover {
+            color: #c9a375;
         }
 
-        /* Social Icons */
-        .social-icons {
+        .newsletter-form {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            min-width: 250px;
+        }
+
+        .newsletter-form button {
+            background-color: #c9a375;
+            color: #2D1B12;
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 14px;
+        }
+
+        .newsletter-form button:hover {
+            background: #8b5e34;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: flex-start;
             gap: 15px;
             margin-top: 10px;
         }
-        .social-icon img {
-            width: 30px;
-            height: 30px;
-            object-fit: contain;
+
+        .footer-socials a img {
+            width: 24px;
+            height: 24px;
             transition: transform 0.3s;
         }
-        .social-icon:hover img {
+
+        .footer-socials a:hover img {
             transform: scale(1.1);
         }
 
-        /* Newsletter Form */
-        .newsletter-form {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .newsletter-form input {
-            padding: 10px 15px;
-            width: 220px;
-            border: none;
-            border-radius: 20px;
-            outline: none;
-        }
-        .newsletter-form button {
-            padding: 10px 20px;
-            border: none;
-            background: #8B5E34;
-            color: #fff;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .newsletter-form button:hover {
-            background: #a07c5d;
-        }
-
-        /* Footer Bottom */
         .footer-bottom {
             text-align: center;
             padding: 15px 0;
+            border-top: 1px solid #c9a375;
             font-size: 14px;
-            background: #311e14;
-            color: #fff;
         }
 
-          /* Toast Notification */
+        @media (max-width: 1024px) {
+    .footer .container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .footer-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 10px;
+    }
+
+    .footer-content {
+        gap: 20px;
+    }
+
+    .newsletter-form input {
+        min-width: unset;
+    }
+}
+
+
         .toast {
-            position: fixed;
-            bottom: 40px;  
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #8B5E34;
-            color: #fff;
-            padding: 12px 24px;   
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            z-index: 9999;
-            font-family: 'Playfair Display', serif;
-            font-size: 14px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s, visibility 0.5s;
-            max-width: 150px;     
-            text-align: center;    
-            white-space: nowrap;   
-        }
-        .toast.show {
-            opacity: 1;
-            visibility: visible;
-        }
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #8b5e34c7; 
+        color: #fff;
+        border-radius: 8px;
+        font-size: 14px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        line-height: 1.2; 
+        min-height: auto; 
+        display: inline-block; 
+        max-width: max-content; 
+        padding: 8px 16px; 
+        text-align: center;
+    }
+
+    .toast.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
     </style>
 
@@ -277,7 +478,7 @@
                 <li class="nav-item"><a class="nav-link" href="Login.html">LOGIN</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about-0">ABOUT</a></li>
                 <li class="nav-item"><a class="nav-link" href="#product-0">COLLECTION</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact-0">CONTACT</a></li>
+                <li class="nav-item"><a class="nav-link" href="#boutiques-0">FIND US</a></li>
                 <li class="nav-item">
                     <a href="cart.html" class="nav-link cart-icon position-relative">
                         <img src="https://cdn-icons-png.flaticon.com/128/2956/2956820.png" alt="Cart">
@@ -343,75 +544,102 @@
 </section>
 
 <br><br>
-   <!-- Contact Section -->
-<section id="contact-0" class="contact-form py-5">
+  <!-- Boutique Section -->
+   <section id="boutiques-0">
+<section class="boutique-section">
     <div class="container">
-        <h2 class="text-center">Contact Us</h2>
-        <form id="contact-form" class="mt-4" onsubmit="sendMessage(event)">
-            <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Your Name" required>
+        <h2>Visit Our Boutique</h2>
+        <p>Discover The Bag Atelier’s latest collections in our boutiques. Experience the refined craftsmanship and timeless designs up close, crafted for the modern woman.</p>
+        
+        <div class="row mt-5">
+            <!-- Boutique 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="card p-4">
+                    <h4>Greenbelt, Makati</h4>
+                    <p>Ayala Center, Makati City, Philippines</p>
+                    <p>📞 (+63) 912 345 6789</p>
+                    <p>🕒 Mon-Sun: 10:00 AM - 9:00 PM</p>
+                    <br>
+                    <a href="https://goo.gl/maps/XxYQx" target="_blank" class="btn">View on Map</a>
+                </div>
             </div>
-            <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Your Email" required>
+
+            <!-- Boutique 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="card p-4">
+                    <h4>Bonifacio High Street, Taguig</h4>
+                    <p>5th Ave, Taguig City, Philippines</p>
+                    <p>📞 (+63) 915 678 1234</p>
+                    <p>🕒 Mon-Sun: 10:00 AM - 10:00 PM</p>
+                    <br>
+                    <a href="https://goo.gl/maps/YyQXx" target="_blank" class="btn">View on Map</a>
+                </div>
             </div>
-            <div class="mb-3">
-                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+        </div>
     </div>
 </section>
-<!-- Pop-up alert -->
-<div id="toast" class="toast">Message Sent!</div>
+</section>
 
-<br><br>
-
-<!-- Footer -->
 <footer class="footer">
-    <div class="footer-container">
-      
-      <!-- Contact Section -->
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>Email: <a href="mailto:support@thebagatelier.com">support@thebagatelier.com</a></p>
-        <p>Phone: (+63) 912 345 6789</p>
-      </div>
-  
-      <!-- Social Media Section -->
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-            <a href="https://www.instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
-            <img src="Assets/instagram-bw.png" alt="Instagram">
-          </a>
-          <a href="https://www.facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
-            <img src="Assets/facebook-bw.png" alt="Facebook">
-          </a>
+    <div class="container">
+        <div class="footer-content">
+            
+            <div class="footer-column">
+                <h4>Stay in the Loop</h4>
+                <p>Subscribe to receive updates on new arrivals, exclusive offers, and styling tips.</p>
+                <form id="newsletter-form" class="newsletter-form" onsubmit="showSubscribeToast(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                
+            </div>
+        
+            <!-- Toast Notification -->
+<div id="subscribe-toast" class="toast">You are now subscribed.</div>
+
+            <div class="footer-column">
+                <h4>Quick Info</h4>
+                <p>Shipping Details: 3-5 business days</p>
+                <p>Returns & Refunds: Within 30 days</p>
+                <p>Payment Options: Credit Card, PayPal, GCash</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:support@thebagatelier.com">support@thebagatelier.com</a></p>
+                <p>Address: 123 Fashion Blvd, Manila, Philippines</p>
+                <div class="footer-socials">
+                    <a href="#"><img src="Assets/instagram-bw.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/facebook-bw.png" alt="Facebook"></a>
+                </div>
+            </div>
         </div>
-      </div>
-  
-      <!-- Newsletter Section -->
-      <div class="footer-section">
-        <h3>Subscribe to Our Newsletter</h3>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-  
+
+        <div class="footer-bottom">
+            &copy; 2025 The Bag Atelier | Designed with elegance and purpose
+        </div>
     </div>
-  <br>
-    <div class="footer-bottom">
-      <p>© 2025 The Bag Atelier | All Rights Reserved</p>
-    </div>
-  </footer>
-  
+</footer>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    
+            let prevScrollPos = window.pageYOffset;
+            window.onscroll = () => {
+                const currentScrollPos = window.pageYOffset;
+                const navbar = document.querySelector('.navbar');
+
+                if (prevScrollPos > currentScrollPos) {
+                    navbar.classList.remove('hidden');
+                } else {
+                    navbar.classList.add('hidden');
+                }
+
+                prevScrollPos = currentScrollPos;
+            };
+
             // Function to render products
             function renderProducts() {
                 const products = [
@@ -444,7 +672,7 @@
                                             data-product="${product.name}" 
                                             data-price="${product.price}" 
                                             data-img="${product.img}">
-                                        Add to Cart
+                                        Add to Shopping Bag
                                     </button>
                                 </div>
                             </div>
@@ -491,7 +719,7 @@
 
                     sessionStorage.setItem("cart", JSON.stringify(cart));
 
-                    showToast(`✅ ${product} added to cart!`);
+                    showToast(`✅ ${product} added to shopping bag!`);
                     updateCartIcon();
                 });
             });
@@ -521,29 +749,27 @@
             }, 2000);
         }
 
-        // Render products and update cart icon on page load
         renderProducts();
         updateCartIcon();
     });
 
-    // ✅ Move the sendMessage function outside the DOMContentLoaded block
-    function sendMessage(event) {
-        event.preventDefault();  // Prevent form submission
-        const toast = document.getElementById('toast');
 
-        // Show the "Message Sent" toast
-        toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 2000);
 
-        // Clear the form after submission
-        const form = document.getElementById('contact-form');
-        form.reset();
-    }
+function showSubscribeToast(event) {
+    event.preventDefault();  
+
+    const toast = document.getElementById('subscribe-toast');
+    
+    toast.classList.add('show');
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+
+    document.getElementById('newsletter-form').reset();
+}
+
     </script>
-    
-    
 
 </body>
 </html>
