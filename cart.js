@@ -86,30 +86,30 @@ function clearCart() {
 
 function getProductImage(product) {
     switch (product) {
-        case "DADA 01":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_DADA-01-2_2.jpg";
-        case "FEAR X G13":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_FEAR_X_G13_2.jpg";
-        case "EX S01":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_EX_S01_2.jpg";
-        case "ATEMPO 01 2":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_ATEMPO_01_2.jpg";
-        case "BARETTE 02":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/b/a/barrette-02_2_1_1.jpg";
-        case "DONUTBUN Bl5":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/d/o/donutbun-bl5_2_1_1.jpg";
-        case "TOTE 01":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_TOTE_01_2.jpg";
-        case "MONTA 01":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_MONTA_01_2.jpg";
-        case "AVON W2":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_AVON_W2_2.jpg";
-        case "MOLTA BRC11":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_MOLTA-BRC11-2.jpg";
-        case "VOID 01":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_VOID-01-2_2.jpg";
-        case "TTA 01":
-            return "https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/6c6f229b8a7ab97f51028776641e27d1/1/1/11001_TTA_01_2.jpg";
+        case "Zenaida Tote":
+            return "Assets/bag1.jpg";
+        case "Yvonne Handle Bag":
+            return "Assets/bag2.jpg";
+        case "Camille Hobo Bag":
+            return "Assets/bag3.jpg";
+        case "Ann Tote Bag":
+            return "Assets/bag4.jpg";
+        case "Ava Messenger Bag":
+            return "Assets/bag5.jpg";
+        case "Lily Crossbody":
+            return "Assets/bag6.jpg";
+        case "Serena Tote Bag":
+            return "Assets/bag7.jpg";
+        case "Natalie Handle Bag":
+            return "Assets/bag8.jpg";
+        case "Margaux Hobo Bag":
+            return "Assets/bag9.jpg";
+        case "Anastasia Shoulder Bag":
+            return "Assets/bag10.jpg";
+        case "Colette Crossbody":
+            return "Assets/bag11.jpg";
+        case "Genevieve Crossbody":
+            return "Assets/bag12.jpg";
         default:
             return ""; 
     }
