@@ -289,3 +289,14 @@ button.ghost {
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(100%);
+    }
+}
