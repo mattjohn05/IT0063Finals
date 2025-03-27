@@ -42,14 +42,14 @@ h3, h2, h1 {
 }
 
 .payment-form .products {
-    background-color: #8B5E34;
+    background-color: #fff;
     padding: 25px;
     border-radius: 20px;
     margin-bottom: 30px;
     list-style-type: none; 
     padding-left: 0;
     box-shadow: 0 5px 3px #30200e;
-    color: #fff; 
+    color: #8B5E34; 
 }
 
 .payment-form .products .item {
@@ -93,6 +93,10 @@ h3, h2, h1 {
     margin-bottom: 10px; 
 }
 
+#cardlabel {
+    color: #8B5E34;
+}
+
 .payment-form .card-details {
     padding: 25px;
     border-radius: 10px;
@@ -119,7 +123,7 @@ h3, h2, h1 {
     padding: 12px 0;
     font-weight: 600;
     border-radius: 10px;
-    color: white;
+    color: #fff;
     width: 100%;
     border: none; 
     outline: none; 
@@ -165,7 +169,7 @@ h3, h2, h1 {
     }
 
     .payment-form .card-details .checkout {
-        background-color: #060F18;
+        background-color: #0E350D;
         box-shadow: 0 7px #1d1d1d;
         border-radius: 40px;
         margin-top: 2em;
@@ -178,7 +182,7 @@ h3, h2, h1 {
     }
 
     .payment-form .card-details .checkout:hover {
-        background-color: #0E350D;
+        background-color: #1f721e;
         color: #fff;
     }
 
