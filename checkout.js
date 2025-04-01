@@ -3,8 +3,14 @@ $(document).ready(function() {
 
     $("#payment-form").submit(function(event) {
         event.preventDefault();
-        window.location.href = "success.html";
+                clearCart();
+                window.location.href = "success.html";
     });
+
+    function clearCart() {
+        sessionStorage.removeItem("cart");
+        console.log("Cart cleared");
+    }
 });
 
 function displayCheckoutDetails() {
