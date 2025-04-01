@@ -1,4 +1,4 @@
-/* checkout.css */
+/*checkout.css */
 
 body, main {
     background-color: #A4907f;
@@ -127,6 +127,7 @@ h3, h2, h1 {
     width: 100%;
     border: none; 
     outline: none; 
+    background-color: #0E350D; 
 }
 
 .cancel {
@@ -135,71 +136,17 @@ h3, h2, h1 {
     font-weight: 600;
     border-radius: 10px;
     color: white;
-    width: 80%;
+    width: 100%; 
     border: none; 
     outline: none;
+    background-color: rgb(128, 2, 2); 
 }
 
-.payment-form .date-separator {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5px;
-    font-size: 18px;
-}
-
-@media (min-width: 576px) {
-    .payment-form .title {
-        font-size: 1.2em;
-    }
-
-    .payment-form .products {
-        padding: 30px;
-    }
-
-    .payment-form .products .item-name {
-        font-size: 3px;
-    }
-
-    .payment-form .products .price {
-        font-size: 1em;
-    }
-
-    .payment-form .card-details {
-        padding: 40px 40px 30px;
-    }
-
-    .payment-form .card-details .checkout {
-        background-color: #0E350D;
-        box-shadow: 0 7px #1d1d1d;
-        border-radius: 40px;
-        margin-top: 2em;
-    }
-
-    .payment-form .card-details button:active {
-        box-shadow: 0 2px #1d1d1d;;
-        transform: scale(1);
-        transform: translateY(2px);
-    }
-
-    .payment-form .card-details .checkout:hover {
-        background-color: #1f721e;
-        color: #fff;
-    }
-
+@media (max-width: 575.98px) {
+    .payment-form .card-details .checkout,
     .cancel {
-        background-color: rgb(128, 2, 2);
-        box-shadow: 0 7px #1d1d1d;
-        border-radius: 40px;
-        margin-top: 2em;
-    }
-
-    .cancel:focus, .cancel:active {
-        outline: none !important;
-        box-shadow: none !important;
-    }    
-
-    .cancel:hover {
-        background-color: rgb(253, 46, 31);
-        color: #fff;
+        display: block;
+        width: 100%; 
+        box-sizing: border-box; 
     }
 }
